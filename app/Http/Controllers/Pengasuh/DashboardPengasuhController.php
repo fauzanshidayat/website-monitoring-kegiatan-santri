@@ -22,7 +22,7 @@ class DashboardPengasuhController extends Controller
 
         $totalPelanggaranSantri = Pelanggaran::whereIn('data_pelanggaran_id', $dataPelanggaranIds)->count();
 
-        $totalPerizinanPulang = PerizinanPulang::where('pengasuh_id', $pengasuhId)->count();
+        $totalPerizinanPulang = PerizinanPulang::count();
 
         return view('pengasuh.dashboard', compact(
             'totalDataPelanggaran',

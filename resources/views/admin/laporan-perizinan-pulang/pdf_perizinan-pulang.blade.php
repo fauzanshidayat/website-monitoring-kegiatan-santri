@@ -65,6 +65,7 @@
     <table>
         <thead>
             <tr>
+                <th>No</th>
                 <th>Nama Santri</th>
                 <th>Alasan</th>
                 <th>Tanggal Pulang</th>
