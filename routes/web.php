@@ -44,6 +44,8 @@ Route::middleware('auth')->group(function () {
         //Kelas
         Route::get('/kelas', [KelasController::class, 'index'])->name('kelas.index');
         Route::post('/kelas', [KelasController::class, 'store'])->name('kelas.store');
+        Route::get('/kelas/{id}/edit', [KelasController::class, 'edit'])->name('kelas.edit');
+        Route::put('/kelas/{id}', [KelasController::class, 'update'])->name('kelas.update');
         Route::delete('/kelas/{id}', [KelasController::class, 'destroy'])->name('kelas.destroy');
         //santri
         Route::resource('/santri', SantriController::class);

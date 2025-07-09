@@ -75,12 +75,11 @@
                                             <td>{{ $index + 1 }}</td>
                                             <td>{{ $kelas->nama_kelas }}</td>
                                             <td>
-                                                {{-- <a href="#" class="btn btn-success btn-sm" title="Lihat">
-                                                    <i class="fas fa-eye"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-primary btn-sm" title="Edit">
+
+                                                <a href="{{ route('kelas.edit', $kelas->id) }}"
+                                                    class="btn btn-primary btn-sm" title="Edit">
                                                     <i class="fas fa-edit"></i>
-                                                </a> --}}
+                                                </a>
                                                 <form action="{{ route('kelas.destroy', $kelas->id) }}" method="POST"
                                                     style="display:inline-block;"
                                                     onsubmit="return confirm('Yakin ingin menghapus kelas ini?');">
