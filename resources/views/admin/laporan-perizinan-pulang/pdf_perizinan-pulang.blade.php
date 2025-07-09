@@ -53,11 +53,19 @@
             background-color: #ffc107;
             color: black;
         }
+
+        img {
+            width: 100%;
+            /* Mengatur lebar gambar agar tidak lebih lebar dari lebar kertas */
+            max-width: 100%;
+            /* Batas lebar gambar agar tidak terlalu besar */
+            height: 150px;
+        }
     </style>
 </head>
 
 <body>
-
+    <img src="{{ public_path('assets/images/kop-surat.png') }}" alt="Kop Surat">
     <h2>Laporan Perizinan Pulang Santri</h2>
     <h4>Periode: {{ \Carbon\Carbon::parse($tanggal_mulai)->format('d M Y') }} -
         {{ \Carbon\Carbon::parse($tanggal_selesai)->format('d M Y') }}</h4>

@@ -56,7 +56,7 @@
                             </h6>
                         </div>
                         <div class="ml-auto mt-md-3 mt-lg-0">
-                            <i data-feather="alert-triangle" class="feather-icon text-muted"></i>
+                            <i data-feather="alert-circle" class="feather-icon text-muted"></i>
                         </div>
                     </div>
                 </div>

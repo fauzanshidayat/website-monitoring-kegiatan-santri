@@ -33,6 +33,7 @@
                                 <th>Tgl Pulang</th>
                                 <th>Tgl Kembali</th>
                                 <th>Status</th>
+                                <th>Cetak Surat</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -52,6 +53,12 @@
                                         @else
                                             <span class="badge badge-danger">Ditolak</span>
                                         @endif
+                                    </td>
+                                    <td> <!-- Tombol Cetak Surat -->
+                                        <a href="{{ route('pengasuh.perizinan-pulang.print', $item->id) }}"
+                                            class="btn btn-info btn-sm mx-1" title="Cetak Surat">
+                                            <i class="fas fa-print"></i> Cetak
+                                        </a>
                                     </td>
                                     <td>
                                         <a href="{{ route('pengasuh.perizinan-pulang.show', $item->id) }}"

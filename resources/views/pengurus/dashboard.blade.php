@@ -41,7 +41,7 @@
                         </div>
                         <div class="ml-auto mt-md-3 mt-lg-0">
                             <span class="opacity-7 text-muted">
-                                <i data-feather="book-open"></i>
+                                <i data-feather="file-text"></i>
                             </span>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                         </div>
                         <div class="ml-auto mt-md-3 mt-lg-0">
                             <span class="opacity-7 text-muted">
-                                <i data-feather="clipboard"></i>
+                                <i data-feather="book-open"></i>
                             </span>
                         </div>
                     </div>

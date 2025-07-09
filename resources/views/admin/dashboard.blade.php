@@ -101,7 +101,7 @@
                             <h6 class="text-muted font-weight-normal mb-0 text-truncate">Total Data Kegiatan</h6>
                         </div>
                         <div class="ml-auto">
-                            <span class="opacity-7 text-muted"><i data-feather="activity"></i></span>
+                            <span class="opacity-7 text-muted"><i data-feather="calendar"></i></span>
                         </div>
                     </div>
                 </div>

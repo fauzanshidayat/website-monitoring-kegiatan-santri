@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Santri;
 
-use App\Http\Controllers\Controller;
-use App\Models\PerizinanPulang;
+use PDF;
 use Illuminate\Http\Request;
+use App\Models\PerizinanPulang;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class AjukanPerizinanPulangController extends Controller
@@ -103,5 +104,17 @@ class AjukanPerizinanPulangController extends Controller
         $perizinan->delete();
 
         return redirect()->route('perizinan-pulang.index')->with('success', 'Pengajuan berhasil dihapus.');
+    }
+
+    public function print($id)
+    {
+        $santri = Auth::user()->santri;
+        $perizinan = PerizinanPulang::where('santri_id', $santri->id)->findOrFail($id);
+
+        // Generate PDF from the view
+        $pdf = PDF::loadView('santri.perizinan-pulang.surat-perizinan', compact('perizinan'));
+
+        // Return PDF to browser
+        return $pdf->download('surat_perizinan_' . $perizinan->id . '.pdf');
     }
 }

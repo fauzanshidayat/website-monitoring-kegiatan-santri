@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Pengasuh;
 
-use App\Http\Controllers\Controller;
-use App\Models\PerizinanPulang;
+use PDF;
 use Illuminate\Http\Request;
+use App\Models\PerizinanPulang;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class DataPerizinanPulangController extends Controller
@@ -42,5 +43,17 @@ class DataPerizinanPulangController extends Controller
         ]);
 
         return redirect()->back()->with('success', 'Status pengajuan berhasil diperbarui.');
+    }
+
+    // Fitur cetak surat perizinan
+    public function print($id)
+    {
+        $perizinan = PerizinanPulang::with('santri')->findOrFail($id);
+
+        // Generate PDF from the view
+        $pdf = PDF::loadView('pengasuh.data-perizinan-pulang.surat-perizinan', compact('perizinan'));
+
+        // Return PDF to browser
+        return $pdf->download('surat_perizinan_pulang_' . $perizinan->id . '.pdf');
     }
 }

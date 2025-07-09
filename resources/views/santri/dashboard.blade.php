@@ -54,7 +54,7 @@
                             <h6 class="text-muted font-weight-normal mb-0 text-truncate">Total Pelanggaran</h6>
                         </div>
                         <div class="ml-auto">
-                            <span class="opacity-7 text-muted"><i data-feather="alert-triangle"></i></span>
+                            <span class="opacity-7 text-muted"><i data-feather="alert-circle"></i></span>
                         </div>
                     </div>
                 </div>

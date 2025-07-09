@@ -1,4 +1,3 @@
-{{-- resources/views/admin/laporan-hafalan/pdf.blade.php --}}
 <!DOCTYPE html>
 <html>
 
@@ -8,6 +7,8 @@
         body {
             font-family: sans-serif;
             font-size: 12px;
+            margin: 0;
+            padding: 0;
         }
 
         table {
@@ -26,11 +27,23 @@
         th {
             background-color: #eee;
         }
+
+        /* Mengatur gambar untuk menyesuaikan ukuran kertas A4 landscape */
+        img {
+            width: 100%;
+            /* Mengatur lebar gambar agar tidak lebih lebar dari lebar kertas */
+            max-width: 100%;
+            /* Batas lebar gambar agar tidak terlalu besar */
+            height: 150px;
+        }
     </style>
 </head>
 
 <body>
-    <h2 align="center">Laporan Hafalan</h2>
+    <!-- Gambar Kop Surat dengan ukuran yang sudah disesuaikan -->
+    <img src="{{ public_path('assets/images/kop-surat.png') }}" alt="Kop Surat">
+
+    <h2 align="center">Laporan Hafalan Santri</h2>
     <p><strong>Kegiatan:</strong> {{ $dataKegiatan->kegiatan }}</p>
     <p><strong>Periode:</strong> {{ $tanggal_mulai }} s/d {{ $tanggal_selesai }}</p>
 

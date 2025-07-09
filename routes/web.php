@@ -94,6 +94,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/perizinan-pulang', [DataPerizinanPulangController::class, 'index'])->name('pengasuh.perizinan-pulang.index');
         Route::get('/perizinan-pulang/{id}', [DataPerizinanPulangController::class, 'show'])->name('pengasuh.perizinan-pulang.show');
         Route::post('/perizinan-pulang/{id}/status', [DataPerizinanPulangController::class, 'updateStatus'])->name('pengasuh.perizinan-pulang.updateStatus');
+
+        Route::get('/pengasuh/perizinan-pulang/cetak/{id}', [DataPerizinanPulangController::class, 'print'])->name('pengasuh.perizinan-pulang.print');
     });
 
     // Dashboard Pengurus
@@ -114,6 +116,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/', [DashboardSantriController::class, 'index'])->name('dashboard.santri');
 
         Route::resource('/perizinan-pulang', AjukanPerizinanPulangController::class);
+
+        Route::get('/perizinan-pulang/cetak/{id}', [AjukanPerizinanPulangController::class, 'print'])->name('perizinan-pulang.print');
 
         Route::get('/hafalan-saya', [LihatHafalanSayaController::class, 'index'])->name('santri.hafalan-saya.index');
         Route::get('/hafalan-saya/{dataKegiatan}', [LihatHafalanSayaController::class, 'show'])->name('santri.hafalan-saya.show');
