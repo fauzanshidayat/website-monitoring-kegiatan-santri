@@ -38,6 +38,10 @@ class Santri extends Model
     {
         return $this->hasMany(Hafalan::class);
     }
+    public function prestasi()
+    {
+        return $this->hasMany(Prestasi::class);
+    }
 
     public function pelanggaran()
     {

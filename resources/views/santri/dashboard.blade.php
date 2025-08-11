@@ -59,6 +59,19 @@
                     </div>
                 </div>
             </div>
+            <div class="card border-right">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <h2 class="text-dark mb-1 font-weight-medium">{{ $totalPrestasi }}</h2>
+                            <h6 class="text-muted font-weight-normal mb-0 text-truncate">Total Prestasi </h6>
+                        </div>
+                        <div class="ml-auto">
+                            <span class="opacity-7 text-muted"><i data-feather="alert-circle"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             {{-- Total Perizinan Pulang --}}
             <div class="card border-right">

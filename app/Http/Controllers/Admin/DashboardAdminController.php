@@ -10,6 +10,7 @@ use App\Models\Pengasuh;
 use App\Models\Santri;
 use App\Models\DataKegiatan;
 use App\Models\DataPelanggaran;
+use App\Models\Prestasi;
 
 class DashboardAdminController extends Controller
 {
@@ -21,6 +22,7 @@ class DashboardAdminController extends Controller
         $totalSantri = Santri::count();
         $totalKegiatan = DataKegiatan::count();
         $totalPelanggaran = DataPelanggaran::count();
+        $totalPrestasi = Prestasi::count();
 
         return view('admin.dashboard', compact(
             'totalKelas',
@@ -28,6 +30,7 @@ class DashboardAdminController extends Controller
             'totalPengasuh',
             'totalSantri',
             'totalKegiatan',
+            'totalPrestasi',
             'totalPelanggaran'
         ));
     }

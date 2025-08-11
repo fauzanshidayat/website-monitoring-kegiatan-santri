@@ -18,12 +18,14 @@ class DashboardSantriController extends Controller
 
         $totalHafalan = $santri->hafalan()->count();
         $totalPelanggaran = $santri->pelanggaran()->count();
+        $totalPrestasi = $santri->prestasi()->count();
         $totalPerizinan = $santri->perizinanPulang()->count();
 
         return view('santri.dashboard', compact(
             'totalHafalan',
             'totalPelanggaran',
-            'totalPerizinan'
+            'totalPerizinan',
+            'totalPrestasi'
         ));
     }
 }

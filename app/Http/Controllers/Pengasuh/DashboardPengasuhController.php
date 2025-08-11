@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\DataPelanggaran;
 use App\Models\Pelanggaran;
 use App\Models\PerizinanPulang;
+use App\Models\Prestasi;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardPengasuhController extends Controller
@@ -24,10 +25,13 @@ class DashboardPengasuhController extends Controller
 
         $totalPerizinanPulang = PerizinanPulang::count();
 
+        $totalPrestasiSantri = Prestasi::count();
+
         return view('pengasuh.dashboard', compact(
             'totalDataPelanggaran',
             'totalPelanggaranSantri',
-            'totalPerizinanPulang'
+            'totalPerizinanPulang',
+            'totalPrestasiSantri'
         ));
     }
 }

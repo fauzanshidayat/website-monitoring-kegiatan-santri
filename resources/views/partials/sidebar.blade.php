@@ -63,6 +63,13 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
+                        <a class="sidebar-link sidebar-link" href="{{ route('admin.prestasi-santri.index') }}"
+                            aria-expanded="false">
+                            <i data-feather="book-open" class="feather-icon"></i><span class="hide-menu">Data
+                                Prestasi</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
                         <a class="sidebar-link sidebar-link" href="{{ route('admin.pelanggaran-santri.index') }}"
                             aria-expanded="false">
                             <i data-feather="alert-circle" class="feather-icon"></i><span class="hide-menu">Data
@@ -89,6 +96,9 @@
                             <li class="sidebar-item"><a href="{{ route('admin.laporan-hafalan.index') }}"
                                     class="sidebar-link">
                                     <span class="hide-menu">Hafalan Santri</span></a></li>
+                            <li class="sidebar-item"><a href="{{ route('admin.laporan-prestasi.index') }}"
+                                    class="sidebar-link">
+                                    <span class="hide-menu">Prestasi Santri</span></a></li>
                             <li class="sidebar-item"><a href="{{ route('admin.laporan-pelanggaran.index') }}"
                                     class="sidebar-link">
                                     <span class="hide-menu">Pelanggaran Santri</span></a></li>
@@ -135,6 +145,16 @@
                     </li>
                     <li class="list-divider"></li>
                     <li class="nav-small-cap">
+                        <span class="hide-menu">Kelola Prestasi</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{{ route('prestasi.index') }}" aria-expanded="false">
+                            <i data-feather="alert-circle" class="feather-icon"></i><span class="hide-menu">Prestasi
+                                Santri</span>
+                        </a>
+                    </li>
+                    <li class="list-divider"></li>
+                    <li class="nav-small-cap">
                         <span class="hide-menu">Kelola Perizinan</span>
                     </li>
                     <li class="sidebar-item">
@@ -159,6 +179,17 @@
                         <a class="sidebar-link" href="{{ route('santri.hafalan-saya.index') }}"
                             aria-expanded="false">
                             <i data-feather="book-open" class="feather-icon"></i><span class="hide-menu">Hafalan
+                                Saya</span>
+                        </a>
+                    </li>
+                    <li class="list-divider"></li>
+                    <li class="nav-small-cap">
+                        <span class="hide-menu">Data Prestasi</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{{ route('santri.prestasi-saya.index') }}"
+                            aria-expanded="false">
+                            <i data-feather="book-open" class="feather-icon"></i><span class="hide-menu">Prestasi
                                 Saya</span>
                         </a>
                     </li>

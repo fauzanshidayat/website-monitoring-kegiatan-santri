@@ -40,6 +40,22 @@ class AjukanPerizinanPulangController extends Controller
             return redirect()->back()->with('error', 'Data santri tidak ditemukan.');
         }
 
+        // Ambil bulan dan tahun dari tanggal sekarang
+        $currentMonth = now()->month;
+        $currentYear = now()->year;
+
+        // Hitung jumlah pengajuan santri di bulan dan tahun ini
+        $jumlahPengajuanBulanIni = PerizinanPulang::where('santri_id', $santri->id)
+            ->whereMonth('created_at', $currentMonth)
+            ->whereYear('created_at', $currentYear)
+            ->count();
+
+        // Batasi maksimal 3 pengajuan per bulan
+        if ($jumlahPengajuanBulanIni >= 3) {
+            return redirect()->back()->with('error', 'Maaf, Anda hanya bisa mengajukan maksimal 3 kali per bulan.');
+        }
+
+        // Simpan pengajuan
         PerizinanPulang::create([
             'santri_id' => $santri->id,
             'alasan' => $request->alasan,
@@ -49,6 +65,7 @@ class AjukanPerizinanPulangController extends Controller
 
         return redirect()->route('perizinan-pulang.index')->with('success', 'Pengajuan berhasil dikirim.');
     }
+
 
     // Lihat detail pengajuan
     public function show($id)

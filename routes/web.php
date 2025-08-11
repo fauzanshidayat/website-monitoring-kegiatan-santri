@@ -16,6 +16,7 @@ use App\Http\Controllers\Santri\LihatHafalanSayaController;
 use App\Http\Controllers\Admin\LaporanAdminHafalanController;
 use App\Http\Controllers\Admin\LaporanAdminPelanggaranController;
 use App\Http\Controllers\Admin\LaporanAdminPerizinanPulangController;
+use App\Http\Controllers\Admin\LaporanAdminPrestasiController;
 use App\Http\Controllers\Pengasuh\DashboardPengasuhController;
 use App\Http\Controllers\Pengasuh\PelanggaranSantriController;
 use App\Http\Controllers\Pengurus\DashboardPengurusController;
@@ -25,6 +26,9 @@ use App\Http\Controllers\Pengasuh\DataPerizinanPulangController;
 use App\Http\Controllers\Santri\AjukanPerizinanPulangController;
 use App\Http\Controllers\Admin\LihatDataPelanggaranSantriController;
 use App\Http\Controllers\Admin\LihatDataPerizinanPulangSantriController;
+use App\Http\Controllers\Admin\LihatDataPrestasiSantriController;
+use App\Http\Controllers\Pengasuh\PrestasiSantriController;
+use App\Http\Controllers\Santri\LihatPrestasiSayaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -68,6 +72,9 @@ Route::middleware('auth')->group(function () {
         Route::get('perizinan-pulang', [LihatDataPerizinanPulangSantriController::class, 'index'])->name('admin.perizinan-pulang.index');
         Route::get('perizinan-pulang/{id}', [LihatDataPerizinanPulangSantriController::class, 'show'])->name('admin.perizinan-pulang.show');
 
+        Route::get('prestasi-santri', [LihatDataPrestasiSantriController::class, 'index'])->name('admin.prestasi-santri.index');
+        Route::get('prestasi-santri/{id}', [LihatDataPrestasiSantriController::class, 'show'])->name('admin.prestasi-santri.show');
+
         Route::get('/laporan-hafalan', [LaporanAdminHafalanController::class, 'index'])->name('admin.laporan-hafalan.index');
         Route::post('/laporan-hafalan', [LaporanAdminHafalanController::class, 'laporanHafalan'])->name('admin.laporan-hafalan');
         Route::get('/laporan-hafalan/pdf', [LaporanAdminHafalanController::class, 'cetakHafalanPDF'])->name('admin.laporan-hafalan.pdf');
@@ -79,6 +86,10 @@ Route::middleware('auth')->group(function () {
         Route::get('/laporan-perizinan-pulang', [LaporanAdminPerizinanPulangController::class, 'index'])->name('admin.laporan-perizinan-pulang.index');
         Route::post('/laporan-perizinan-pulang', [LaporanAdminPerizinanPulangController::class, 'laporanPerizinanPulang'])->name('admin.laporan-perizinan-pulang');
         Route::get('/laporan-perizinan-pulang/pdf', [LaporanAdminPerizinanPulangController::class, 'cetakPerizinanPulangPDF'])->name('admin.laporan-perizinan-pulang.pdf');
+
+        Route::get('/laporan-prestasi', [LaporanAdminPrestasiController::class, 'index'])->name('admin.laporan-prestasi.index');
+        Route::post('/laporan-prestasi', [LaporanAdminPrestasiController::class, 'laporanPrestasi'])->name('admin.laporan-prestasi');
+        Route::get('/laporan-prestasi/pdf', [LaporanAdminPrestasiController::class, 'cetakPrestasiPDF'])->name('admin.laporan-prestasi.pdf');
     });
 
     // Dashboard Pengasuh
@@ -98,6 +109,8 @@ Route::middleware('auth')->group(function () {
         Route::post('/perizinan-pulang/{id}/status', [DataPerizinanPulangController::class, 'updateStatus'])->name('pengasuh.perizinan-pulang.updateStatus');
 
         Route::get('/pengasuh/perizinan-pulang/cetak/{id}', [DataPerizinanPulangController::class, 'print'])->name('pengasuh.perizinan-pulang.print');
+
+        Route::resource('/prestasi', PrestasiSantriController::class);
     });
 
     // Dashboard Pengurus
@@ -123,6 +136,9 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/hafalan-saya', [LihatHafalanSayaController::class, 'index'])->name('santri.hafalan-saya.index');
         Route::get('/hafalan-saya/{dataKegiatan}', [LihatHafalanSayaController::class, 'show'])->name('santri.hafalan-saya.show');
+
+        Route::get('/prestasi-saya', [LihatPrestasiSayaController::class, 'index'])->name('santri.prestasi-saya.index');
+        Route::get('/prestasi-saya/{id}', [LihatPrestasiSayaController::class, 'show'])->name('santri.prestasi-saya.show');
 
         Route::get('/pelanggaran-saya', [LihatPelanggaranSayaController::class, 'index'])->name('santri.pelanggaran-saya.index');
         Route::get('/pelanggaran-saya/{dataPelanggaran}', [LihatPelanggaranSayaController::class, 'show'])->name('santri.pelanggaran-saya.show');
