@@ -3,12 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>Login Page</title>
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo nurul alami.png') }}" type="image/x-icon">
+    <title>Simkes Nurul Alami</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <style>
         .left-side {
-            background-color: #0053a1;
+            background-color: #067344;
             position: relative;
             color: white;
             overflow: hidden;
@@ -86,12 +87,13 @@
                 <div class="container-fluid px-4">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center" href="#">
+                            <a class="nav-link d-flex align-items-center" href="{{ route('home') }}">
                                 <i class="fas fa-home"></i> Beranda
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Pendaftaran Santri Baru</a>
+                            <a class="nav-link" href="https://shorturl.at/BYi5I" target="_blank">Pendaftaran Santri
+                                Baru</a>
                         </li>
                     </ul>
                 </div>
