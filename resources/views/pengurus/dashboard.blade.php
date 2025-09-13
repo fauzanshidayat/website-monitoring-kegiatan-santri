@@ -16,7 +16,7 @@
                     $namaLengkap = $user->username;
                 }
             @endphp
-            <div class="col-7 align-self-center">
+            <div class="col-md-7 align-self-center">
                 <h3 class="page-title text-dark text-wrap">
                     Selamat Datang <b>{{ $namaLengkap }}</b>, di Website Sistem Monitoring
                     Kegiatan Santri Pondok Pesantren Modern Nurul Alami

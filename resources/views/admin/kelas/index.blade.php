@@ -22,13 +22,7 @@
                             </button>
                         </div>
                     @endif
-                    <!-- Tombol Tambah -->
-                    <div class="p-4">
-                        <a href="" class="btn btn-primary btn-sm" data-toggle="modal"
-                            data-target="#modalTambahKelas">
-                            <i class="fas fa-plus"></i> Tambah
-                        </a>
-                    </div>
+
                     <!-- Modal Tambah Kelas -->
                     <div class="modal fade" id="modalTambahKelas" tabindex="-1" role="dialog"
                         aria-labelledby="modalTambahKelasLabel" aria-hidden="true">
@@ -58,8 +52,13 @@
                         </div>
                     </div>
 
-
                     <div class="card-body">
+                        <div class="mb-1 d-flex justify-content-start">
+                            <a href="" class="btn btn-primary btn-sm" data-toggle="modal"
+                                data-target="#modalTambahKelas">
+                                <i class="fas fa-plus"></i> Tambah
+                            </a>
+                        </div>
                         <div class="table-responsive">
                             <table id="zero_config" class="table table-sm table-striped table-bordered ">
                                 <thead class="bg-dark">
